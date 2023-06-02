@@ -7,8 +7,33 @@ inquirer
     .prompt([
         {
             type: 'input',
-            message: 'What is the title for your README?',
+            message: 'What is the title of your application?',
             name: 'title',
+        },
+        {
+            type: 'input',
+            message: 'What is the Description of your application?',
+            name: 'description',
+        },
+        {
+            type: 'input',
+            message: 'What are the Installation Instructions for this application?',
+            name: 'installation',
+        },
+        {
+            type: 'input',
+            message: 'What is the Usage Information of this application?',
+            name: 'usage',
+        },
+        {
+            type: 'input',
+            message: 'What are the contribution guidelines to this project?',
+            name: 'contribution',
+        },
+        {
+            type: 'input',
+            message: 'What are the test instructions for this application?',
+            name: 'test',
         },
     ])
     .then((response) =>
@@ -17,7 +42,7 @@ inquirer
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, `# ${data.title}`, (err) =>
+    fs.writeFile(fileName, `# ${data.title} \n\n ## Description \n\n ${data.description} \n\n ## Installation \n\n ${data.installation} \n\n ## Usage \n\n ${data.usage} \n\n ## Contribution \n\n ${data.contribution} \n\n ## Tests \n\n ${data.test}`, (err) =>
     err ? console.error(err) : console.log('README Generated')
     );
 }
