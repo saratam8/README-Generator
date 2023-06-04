@@ -1,21 +1,31 @@
-# README Generator 
+# readme [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) 
 
  ## Description 
 
- This application generates a README file for the user 
+ skfgjh 
 
  ## Installation 
 
- Clone the repo from github, install the inquirer package, and run node index.js in terminal 
+ sl;girh 
 
  ## Usage 
 
- Can be used by anyone to generate a readme 
+ sliefgj 
 
  ## Contribution 
 
- n/a 
+ aoliefh 
 
  ## Tests 
 
- n/a
+ dghil 
+
+ ## Questions 
+
+ Application documentation: [GitHub Profile](https://github.com/saratam8) 
+
+ Additional questions can be sent to this email address: stam296@gmail.com 
+
+ ## License 
+
+ This application is covered under BSD 3-Clause "New" or "Revised" License

@@ -1,13 +1,36 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const markdownGeneration = require('./utils/generateMarkdown.js');
+console.log(markdownGeneration);
 // TODO: Create an array of questions for user input
-const questions = [];
+// const questions = [];
 inquirer
     .prompt([
         {
+            type: 'list',
+            message: 'What license will be used for this application?',
+            name: 'license',
+            choices: [
+                '',
+                'Apache License 2.0',
+                'GNU General Public License v3.0',
+                'MIT License',
+                'BSD 2-Clause "Simplified" License',
+                'BSD 3-Clause "New" or "Revised" License',
+                'Boost Software License 1.0',
+                'Creative Commons Zero v1.0 Universal',
+                'Eclipse Public License 2.0',
+                'GNU Affero General Public License v3.0',
+                'GNU General Public License v2.0',
+                'GNU Lesser General Public License v3.0',
+                'Mozilla Public License 2.0',
+                'The Unlicense'
+            ],
+        },
+        {
             type: 'input',
-            message: 'What is the title of your application?',
+            message: 'What is the name of your application?',
             name: 'title',
         },
         {
@@ -35,6 +58,16 @@ inquirer
             message: 'What are the test instructions for this application?',
             name: 'test',
         },
+        {
+            type: 'input',
+            message: 'What is your GitHub username?',
+            name: 'github',
+        },
+        {
+            type: 'input',
+            message: 'What is your email address?',
+            name: 'email',
+        },
     ])
     .then((response) =>
         writeToFile('README.md', response)
@@ -42,7 +75,12 @@ inquirer
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, `# ${data.title} \n\n ## Description \n\n ${data.description} \n\n ## Installation \n\n ${data.installation} \n\n ## Usage \n\n ${data.usage} \n\n ## Contribution \n\n ${data.contribution} \n\n ## Tests \n\n ${data.test}`, (err) =>
+    console.log(data);
+
+    const licenseBadge = markdownGeneration(data.license);
+    console.log(licenseBadge);
+
+    fs.writeFile(fileName, `# ${data.title} ${licenseBadge} \n\n ## Description \n\n ${data.description} \n\n ## Installation \n\n ${data.installation} \n\n ## Usage \n\n ${data.usage} \n\n ## Contribution \n\n ${data.contribution} \n\n ## Tests \n\n ${data.test} \n\n ## Questions \n\n Application documentation: [GitHub Profile](https://github.com/${data.github}) \n\n Additional questions can be sent to this email address: ${data.email} \n\n ## License \n\n This application is covered under ${data.license}`, (err) =>
     err ? console.error(err) : console.log('README Generated')
     );
 }
