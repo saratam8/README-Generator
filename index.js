@@ -1,10 +1,8 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const markdownGeneration = require('./utils/generateMarkdown.js');
-console.log(markdownGeneration);
-// TODO: Create an array of questions for user input
-// const questions = [];
+console.log(markdownGeneration.renderLicenseBadge());
+
 inquirer
     .prompt([
         {
@@ -73,20 +71,15 @@ inquirer
         writeToFile('README.md', response)
     );
 
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     console.log(data);
 
-    const licenseBadge = markdownGeneration(data.license);
+    const licenseBadge = markdownGeneration.renderLicenseBadge(data.license);
+    const licenseLink = markdownGeneration.renderLicenseLink(data.license);
+    const tableOfContents = markdownGeneration.generateMarkdown();
     console.log(licenseBadge);
 
-    fs.writeFile(fileName, `# ${data.title} ${licenseBadge} \n\n ## Description \n\n ${data.description} \n\n ## Installation \n\n ${data.installation} \n\n ## Usage \n\n ${data.usage} \n\n ## Contribution \n\n ${data.contribution} \n\n ## Tests \n\n ${data.test} \n\n ## Questions \n\n Application documentation: [GitHub Profile](https://github.com/${data.github}) \n\n Additional questions can be sent to this email address: ${data.email} \n\n ## License \n\n This application is covered under ${data.license}`, (err) =>
+    fs.writeFile(fileName, `# ${data.title} ${licenseBadge} \n\n ${tableOfContents} \n\n  ## Description \n\n ${data.description}  \n\n ## Installation \n\n ${data.installation} \n\n ## Usage \n\n ${data.usage}  \n\n ## License \n\n This application is covered under ${licenseLink} \n\n ## Contribution \n\n ${data.contribution} \n\n ## Tests \n\n ${data.test} \n\n ## Questions \n\n Application documentation: [GitHub Profile](https://github.com/${data.github}) \n\n Additional questions can be sent to this email address: ${data.email}`, (err) =>
     err ? console.error(err) : console.log('README Generated')
     );
 }
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
