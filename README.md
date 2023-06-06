@@ -1,46 +1,46 @@
-# readme generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+# readme generator [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) 
 
  ## Table of Contents 
 
- 1. [Description](##Description) 
+ 1. [Description](#description) 
 
- 2. [Installation](##Installation) 
+ 2. [nstallation](#installation) 
 
- 3. [Usage](##Usage) 
+ 3. [Usage](#usage) 
 
- 4. [License](##License) 
+ 4. [License](#license) 
 
- 5. [Contribution](##Contribution) 
+ 5. [Contribution](#contribution) 
 
- 6. [Tests](##Tests) 
+ 6. [Tests](#tests) 
 
- 7. [Questions](##Questions) 
+ 7. [Questions](#questions) 
 
-  ## Description 
+  ## Description <a name="Description"></a> 
 
  create readme  
 
- ## Installation 
+ ## Installation <a name="Installation"></a> 
 
  node.js 
 
- ## Usage 
+ ## Usage <a name="Usage"></a> 
 
  n/a  
 
- ## License 
+ ## License <a name="License"></a> 
 
- This application is covered under [MIT License](https://opensource.org/licenses/MIT) 
+ This application is covered under [BSD 3-Clause "New" or "Revised" License](https://opensource.org/licenses/BSD-3-Clause) 
 
- ## Contribution 
+ ## Contribution <a name="Contribution"></a> 
 
- n/a 
+ n/ 
 
- ## Tests 
+ ## Tests <a name="Tests"></a> 
 
- n/a 
+ a 
 
- ## Questions 
+ ## Questions <a name="Questions"></a> 
 
  Application documentation: [GitHub Profile](https://github.com/saratam8) 
 

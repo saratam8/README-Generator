@@ -95,9 +95,9 @@ function renderLicenseLink(license) {
 
 function generateMarkdown() {
 
-  const table = `## Table of Contents \n\n 1. [Description](##Description) \n\n 2. [Installation](##Installation) \n\n 3. [Usage](##Usage) \n\n 4. [License](##License) \n\n 5. [Contribution](##Contribution) \n\n 6. [Tests](##Tests) \n\n 7. [Questions](##Questions)`
+  const table = `## Table of Contents \n\n 1. [Description](#description) \n\n 2. [Installation](#installation) \n\n 3. [Usage](#usage) \n\n 4. [License](#license) \n\n 5. [Contribution](#contribution) \n\n 6. [Tests](#tests) \n\n 7. [Questions](#questions)`
 
-  return table
+  return table;
 
 }
 
