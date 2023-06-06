@@ -1,47 +1,23 @@
-# readme generator [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) 
+# README Generator
 
- ## Table of Contents 
+## Description
+This application is a professional README generator. It asks the user for input and will format it into the readme and generate the file. It utilizes the inquirer package, fs library and node.js. 
 
- 1. [Description](#description) 
+Structure of the project was provided by the Northwestern Coding Bootcamp.
 
- 2. [nstallation](#installation) 
+## Installation
+Node.js must be installed on the machine this application is running on. Inquirer version 8.2.4 needs to be installed as well.
 
- 3. [Usage](#usage) 
+## Usage
+To use this application, open the project in the terminal of your choice. Run the command "node index.js". Follow the prompts and the README file will be generated.
 
- 4. [License](#license) 
+## Technology Used
+* Node.js
+* Inquirer package
+* npm
 
- 5. [Contribution](#contribution) 
+## Demo of Application
+https://drive.google.com/file/d/1Pv2d0pFX9yniCrd6EAxGxBokKrOTwfM9/view?usp=sharing
 
- 6. [Tests](#tests) 
-
- 7. [Questions](#questions) 
-
-  ## Description <a name="Description"></a> 
-
- create readme  
-
- ## Installation <a name="Installation"></a> 
-
- node.js 
-
- ## Usage <a name="Usage"></a> 
-
- n/a  
-
- ## License <a name="License"></a> 
-
- This application is covered under [BSD 3-Clause "New" or "Revised" License](https://opensource.org/licenses/BSD-3-Clause) 
-
- ## Contribution <a name="Contribution"></a> 
-
- n/ 
-
- ## Tests <a name="Tests"></a> 
-
- a 
-
- ## Questions <a name="Questions"></a> 
-
- Application documentation: [GitHub Profile](https://github.com/saratam8) 
-
- Additional questions can be sent to this email address: stam296@gmail.com
+## Author Links
+https://github.com/saratam8

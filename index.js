@@ -1,8 +1,9 @@
+// Include inquirer package, fs library and the generateMarkdown file
 const inquirer = require('inquirer');
 const fs = require('fs');
 const markdownGeneration = require('./utils/generateMarkdown.js');
-console.log(markdownGeneration.renderLicenseBadge());
 
+// The following inquirer prompts will ask the user for input to populate the readme file
 inquirer
     .prompt([
         {
@@ -71,15 +72,15 @@ inquirer
         writeToFile('README.md', response)
     );
 
+//The following function is used to generate the readme files
 function writeToFile(fileName, data) {
-    console.log(data);
 
+    // The license badge generation, license link generation and table of contents generation
     const licenseBadge = markdownGeneration.renderLicenseBadge(data.license);
     const licenseLink = markdownGeneration.renderLicenseLink(data.license);
     const tableOfContents = markdownGeneration.generateMarkdown();
-    console.log(licenseBadge);
 
-    fs.writeFile(fileName, `# ${data.title} ${licenseBadge} \n\n ${tableOfContents} \n\n  ## Description <a name="Description"></a> \n\n ${data.description}  \n\n ## Installation <a name="Installation"></a> \n\n ${data.installation} \n\n ## Usage <a name="Usage"></a> \n\n ${data.usage}  \n\n ## License <a name="License"></a> \n\n This application is covered under ${licenseLink} \n\n ## Contribution <a name="Contribution"></a> \n\n ${data.contribution} \n\n ## Tests <a name="Tests"></a> \n\n ${data.test} \n\n ## Questions <a name="Questions"></a> \n\n Application documentation: [GitHub Profile](https://github.com/${data.github}) \n\n Additional questions can be sent to this email address: ${data.email}`, (err) =>
-    err ? console.error(err) : console.log('README Generated')
+    // Template literal used to generate the readme file
+    fs.writeFile(fileName, `# ${data.title} ${licenseBadge} \n\n ${tableOfContents} \n\n ## Description\n\n ${data.description}  \n\n ## Installation\n\n ${data.installation} \n\n ## Usage\n\n ${data.usage}  \n\n ## License\n\n This application is covered under ${licenseLink} \n\n ## Contribution \n\n ${data.contribution} \n\n ## Tests \n\n ${data.test} \n\n ## Questions \n\n Application documentation: [GitHub Profile](https://github.com/${data.github}) \n\n Additional questions can be sent to this email address: ${data.email}`, (err) => err ? console.error(err) : console.log('README Generated')
     );
 }

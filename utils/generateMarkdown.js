@@ -1,4 +1,5 @@
 function renderLicenseBadge(license) {
+  // switch case statement to choose the appropriate badge for the license chosen. If no license is chosen, a badge will not be shown on readme
   switch(license) {
     case '':
       return '';
@@ -47,9 +48,10 @@ function renderLicenseBadge(license) {
 }
 
 function renderLicenseLink(license) {
+  // switch case statement to add link to the License section according to the user's choice
   switch(license) {
     case '':
-      return '';
+      return 'None';
 
     case 'Apache License 2.0':
       return '[Apache License 2.0](https://opensource.org/licenses/Apache-2.0)';
@@ -95,6 +97,7 @@ function renderLicenseLink(license) {
 
 function generateMarkdown() {
 
+  // Template literal for the table of contents containingworking links to each section
   const table = `## Table of Contents \n\n 1. [Description](#description) \n\n 2. [Installation](#installation) \n\n 3. [Usage](#usage) \n\n 4. [License](#license) \n\n 5. [Contribution](#contribution) \n\n 6. [Tests](#tests) \n\n 7. [Questions](#questions)`
 
   return table;
